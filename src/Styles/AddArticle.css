@@ -1,0 +1,197 @@
+/* PAGE BACKGROUND (login page feel) */
+
+/* Apply this to the main container or your global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+}
+.no-image-box {
+  width: 100%;
+  height: 180px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding-bottom: 40px;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  height: 180px;
+  background: #1b4332;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* LOGIN-LIKE CARD */
+.card {
+  width: 380px;
+  background: white;
+  margin-top: -60px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #1b4332;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input,
+.form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #40916c;
+  box-shadow: 0 0 5px rgba(64, 145, 108, 0.3);
+}
+
+.form textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* BUTTON */
+.form button {
+  padding: 12px;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background: #1b4332;
+}
+
+/* ARTICLES GRID */
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* ARTICLE CARD */
+.articleCard {
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.articleCard:hover {
+  transform: translateY(-5px);
+}
+
+.articleCard img {
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.articleCard h3 {
+  margin: 10px 0 5px;
+}
+
+.articleCard p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.editBtn {
+  padding: 6px 10px;
+  border: none;
+  background: #40916c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  padding: 6px 10px;
+  border: none;
+  background: #d00000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-btn {
+  padding: 12px;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  width: 100%;
+}
+
+.dashboard-btn:hover {
+  background: #2d6a4f;
+}
+
+.disabled-btn {
+  background: #ccc !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error-msg {
+  color: #d00000;
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 500;
+}

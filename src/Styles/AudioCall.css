@@ -1,0 +1,194 @@
+.audio-container {
+
+  padding: 30px;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  background-color: #f5f5f5;
+
+  border-radius: 12px;
+
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+
+  margin-top: 30px;
+}
+
+.audio-title {
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: #333;
+}
+
+.user-email {
+
+  background-color: #222;
+
+  color: white;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  margin-bottom: 20px;
+}
+
+.status-text {
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+.users-list {
+
+  margin-top: 20px;
+}
+
+.user-card {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background-color: white;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.call-btn {
+
+  background-color: green;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 15px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.call-btn:hover {
+
+  background-color: darkgreen;
+}
+
+.accept-btn {
+
+  background-color: blue;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 15px;
+
+  border-radius: 6px;
+
+  margin-right: 10px;
+
+  cursor: pointer;
+}
+
+.reject-btn {
+
+  background-color: red;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 15px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.end-btn {
+
+  background-color: crimson;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  margin-top: 20px;
+
+  cursor: pointer;
+}
+
+.incoming-call-box {
+
+  background-color: #fff3cd;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  margin-top: 20px;
+
+  border: 1px solid #ffeeba;
+}
+
+.active-call-box {
+
+  background-color: #d4edda;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  margin-top: 20px;
+
+  border: 1px solid #c3e6cb;
+}
+
+.recordings-container {
+
+  margin-top: 40px;
+
+}
+
+.recording-card {
+
+  background: #1e1e1e;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  color: white;
+
+}
+
+.recording-card audio {
+
+  width: 100%;
+
+  margin-top: 10px;
+
+}

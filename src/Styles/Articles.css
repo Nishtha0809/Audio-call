@@ -1,0 +1,98 @@
+.articles-page {
+  padding: 120px 10% 60px;
+  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+  color: #1b4332;
+  margin-bottom: 50px;
+  font-size: 36px;
+  font-weight: bold;
+}
+/* Fix for the grid container */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px); /* Keeps cards same size */
+  gap: 25px; /* Reduced gap slightly for a tighter look */
+  justify-content: center;
+  align-items: start;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Ensure cards don't have unnecessary margins */
+.article-card {
+  width: 100%; /* Grid now controls the 320px width */
+  margin: 0;   /* Remove any accidental margins */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.article-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image-placeholder {
+  height: 180px;
+  background: #0a1931; /* Matches navbar theme */
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
+  color: #1b4332;
+  margin-bottom: 15px;
+}
+
+.card-content p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  
+}
+
+.read-more-btn {
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #1b4332;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 200px; /* Adjust this height as needed */
+  overflow: hidden;
+  background-color: #0a1931; /* Fallback color if image fails */
+}
+
+/* Style for the actual image */
+.article-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is crucial for fixing scaling issues */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Zoom effect when you hover over the card */
+.article-card:hover .article-img {
+  transform: scale(1.05);
+}

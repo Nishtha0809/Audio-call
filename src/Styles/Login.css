@@ -1,0 +1,85 @@
+/* FULL PAGE BACKGROUND */
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Matching the Home page gradient */
+  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* GLASSMORPHISM CARD */
+.login-card {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* The glass effect */
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-card h1 {
+  color: #1b4332;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* FORM STYLING */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #c7e1ce;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+  box-sizing: border-box; /* Prevents input from sticking out */
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 8px rgba(45, 106, 79, 0.2);
+}
+
+/* THE BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background: #1b4332;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: #2d6a4f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(27, 67, 50, 0.3);
+}
+
+.forgot-password {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #2d6a4f;
+  cursor: pointer;
+}

@@ -1,0 +1,77 @@
+/* PAGE */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+  padding: 120px 10% 60px;
+  font-family: Arial, sans-serif;
+}
+
+/* CARD */
+
+.dashboard-card {
+  max-width: 700px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* TITLE */
+
+.dashboard-title {
+  font-size: 42px;
+  color: #1b4332;
+  margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* BUTTON CONTAINER */
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* BUTTONS */
+
+.dashboard-btn {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #2d6a4f;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dashboard-btn:hover {
+  background: #1b4332;
+  transform: translateY(-2px);
+}
+.dashboard-container {
+  display: flex;
+}
+
+/* LEFT SIDE */
+.sidebar {
+  width: 250px;
+}
+
+/* RIGHT SIDE */
+.dashboard-page {
+  flex: 1;
+  padding: 20px;
+}
