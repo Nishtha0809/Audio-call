@@ -77,9 +77,7 @@ function AudioCall() {
         await peerConnection.current.setRemoteDescription(
           new RTCSessionDescription(answer)
         );
-
       }
-
     };
 
     const handleIce = async ({ candidate }) => {
@@ -89,9 +87,7 @@ function AudioCall() {
         await peerConnection.current.addIceCandidate(
           new RTCIceCandidate(candidate)
         );
-
       }
-
     };
 
     const handleCallRejected = () => {
@@ -169,17 +165,13 @@ function AudioCall() {
       const res = await axios.get(
 
         `http://localhost:3002/api/recordings?email=${myEmail}`
-
       );
-
       setSavedRecordings(res.data);
 
     } catch (error) {
 
       console.log(error);
-
     }
-
   };
 
   const createPeerConnection = (targetUser) => {
@@ -325,7 +317,6 @@ function AudioCall() {
       to: incomingCall.from,
 
       answer
-
     });
 
     setActiveCallUser(incomingCall.from);
@@ -340,7 +331,6 @@ function AudioCall() {
       startRecording();
 
     }, 2000);
-
   };
 
   const rejectCall = () => {
@@ -374,23 +364,20 @@ function AudioCall() {
     ]);
 
     mediaRecorder.current =
-      new MediaRecorder(combinedStream);
+      new MediaRecorder(combinedStream); //MediaRecorder records audio in chunks.
 
-    // store audio chunks
     mediaRecorder.current.ondataavailable =
       (event) => {
 
         if (event.data.size > 0) {
 
           recordedChunks.current.push(
-            event.data
+            event.data //is a small audio piece.
           );
-
         }
-
       };
 
-    // when recording stops
+    // when recording stops all chunks combine into single audio file.
     mediaRecorder.current.onstop =
       async () => {
 
@@ -412,18 +399,13 @@ function AudioCall() {
 
         try {
 
-          // CREATE FILE FROM BLOB
-
+          // CREATE FILE FROM BLOB Because backend upload works better with files.
           const file = new File(
-
-            [blob],
-
+           [blob],
             "recording.webm",
-
             {
               type: "audio/webm"
             }
-
           );
 
           // FORM DATA
