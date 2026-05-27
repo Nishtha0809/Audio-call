@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+   origin: ["http://localhost:3000","https://audio-call-3n6e.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
   })
