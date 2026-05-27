@@ -10,7 +10,7 @@ const {
 } = require("../Controller/articleController");
 
 // IMPORT MIDDLEWARE
-const authMiddleware = require("../middleware/authMiddleware");
+const authMiddleware = require("../Middleware/authMiddleware");
 
 // PUBLIC
 router.get("/", getArticles);

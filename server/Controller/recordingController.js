@@ -1,5 +1,5 @@
 const Recording =
-  require("../models/Recording");
+  require("../Models/Recording.js");
 
 // ======================================
 // SAVE RECORDING

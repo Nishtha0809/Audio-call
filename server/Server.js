@@ -4,14 +4,14 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const http = require("http");
 const { Server } = require("socket.io");
-const recordingRoutes = require("./routes/recordingRoutes");
+ const recordingRoutes = require("./Routes/recordingRoutes.js");
 const path = require("path");
 
 require("dotenv").config();
 
-const authRoutes = require("./routes/authRoutes");
-const articleRoutes = require("./routes/articleRoutes");
-const vlogRoutes = require("./routes/vlogRoutes");
+const authRoutes = require("./Routes/authRoutes.js");
+const articleRoutes = require("./Routes/articleRoutes.js");
+const vlogRoutes = require("./Routes/vlogRoutes.js");
 
 const app = express();
 
