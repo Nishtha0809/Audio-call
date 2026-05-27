@@ -47,7 +47,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://new-project-1-cqlz.onrender.com",
     credentials: true
   }
 });
