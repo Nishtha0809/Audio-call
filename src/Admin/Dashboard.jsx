@@ -20,6 +20,7 @@ function Dashboard() {
       localStorage.removeItem("token");
 
       navigate("/login");
+
       window.location.reload();
     }
   };
@@ -28,12 +29,17 @@ function Dashboard() {
 
     <div className="dashboard-container">
 
-      {/* LEFT SIDEBAR */}
+      {/* SIDEBAR */}
       <Sidebar />
 
-      {/* RIGHT MAIN CONTENT */}
+      {/* MAIN PAGE */}
       <div className="dashboard-page">
 
+        {/* ANIMATED GLOW */}
+        <div className="dashboard-glow-1"></div>
+        <div className="dashboard-glow-2"></div>
+
+        {/* CARD */}
         <div className="dashboard-card">
 
           <h1 className="dashboard-title">
@@ -41,9 +47,10 @@ function Dashboard() {
           </h1>
 
           <p className="dashboard-subtitle">
-            Manage Articles and Vlogs
+            Manage Articles, Vlogs & Audio Calls
           </p>
 
+          {/* BUTTONS */}
           <div className="dashboard-buttons">
 
             <Link to="/admin/add-article">
@@ -58,18 +65,23 @@ function Dashboard() {
               </button>
             </Link>
 
-            <button
-              className="dashboard-btn"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+            
+
+            <div className="logout-wrapper">
+  <button
+    className="dashboard-btn logout-btn"
+    onClick={handleLogout}
+  >
+    Logout
+  </button>
+</div>
 
           </div>
 
         </div>
 
       </div>
+
     </div>
   );
 }

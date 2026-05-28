@@ -1,24 +1,121 @@
+/* ========================= */
+/* GLOBAL PAGE */
+/* ========================= */
+
 .vlogs-page {
+  position: relative;
+  overflow: hidden;
+
   padding: 120px 10% 60px;
-  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+
   min-height: 100vh;
+
   box-sizing: border-box;
+
+  background:
+    radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(140,0,255,0.15), transparent 30%),
+    linear-gradient(135deg, #050816 0%, #0a1931 50%, #02030a 100%);
+
+  font-family: "Poppins", sans-serif;
 }
+
+/* ========================= */
+/* ANIMATED BLOCKCHAIN GLOW */
+/* ========================= */
+
+.vlogs-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -120px;
+  left: -120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #8b5cf6,
+    #00ffff
+  );
+
+  opacity: 0.4;
+
+  animation: rotateGlow 6s linear infinite;
+
+  z-index: 0;
+}
+
+.vlogs-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00e5ff,
+    #7c3aed,
+    #00e5ff
+  );
+
+  opacity: 0.3;
+
+  animation: rotateGlowReverse 10s linear infinite;
+
+  z-index: 0;
+}
+.vlogs-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
 
 .vlogs-title {
+  position: relative;
+  z-index: 2;
+
   text-align: center;
-  color: #1b4332;
-  margin-bottom: 50px;
-  font-size: 36px;
-  font-weight: bold;
+
+  margin-bottom: 60px;
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  text-shadow: 0 0 15px rgba(0,255,255,0.5);
 }
 
-/* SAME AS ARTICLES GRID */
+/* ========================= */
+/* GRID */
+/* ========================= */
 
 .vlogs-container {
+  position: relative;
+  z-index: 2;
+
   display: grid;
+
   grid-template-columns: repeat(auto-fill, 320px);
-  gap: 25px;
+
+  gap: 30px;
 
   justify-content: center;
 
@@ -29,100 +126,159 @@
   margin: 0 auto;
 }
 
-/* SAME AS ARTICLE CARD */
+/* ========================= */
+/* CARD */
+/* ========================= */
 
 .vlog-card {
   width: 100%;
 
-  margin: 0;
+  background: rgba(255,255,255,0.06);
 
-  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
 
-  backdrop-filter: blur(8px);
-
-  border-radius: 20px;
+  border-radius: 22px;
 
   overflow: hidden;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,255,255,0.2);
 
-  transition: transform 0.3s ease;
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.08),
+    0 0 40px rgba(140,0,255,0.08);
 
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.35s ease;
+
+  position: relative;
 }
 
 .vlog-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
+
+  border: 1px solid rgba(0,255,255,0.5);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.25),
+    0 0 50px rgba(140,0,255,0.2);
 }
 
+/* ========================= */
 /* IMAGE */
+/* ========================= */
 
 .vlog-img-container {
   width: 100%;
-  height: 200px;
+
+  height: 210px;
 
   overflow: hidden;
 
-  background-color: #0a1931;
+  background: #02030a;
 }
 
 .vlog-img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
 
-  display: block;
-
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .vlog-card:hover .vlog-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/* ========================= */
 /* CONTENT */
+/* ========================= */
 
 .vlog-content {
-  padding: 25px;
+  padding: 24px;
 }
 
 .vlog-content h3 {
-  color: #1b4332;
+  color: #ffffff;
 
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+
+  font-size: 22px;
+
+  text-shadow: 0 0 10px rgba(0,255,255,0.3);
 }
 
 .vlog-content p {
-  color: #555;
+  color: #cbd5e1;
 
-  font-size: 14px;
+  font-size: 15px;
 
-  line-height: 1.6;
+  line-height: 1.7;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
+/* ========================= */
 /* BUTTON */
+/* ========================= */
 
 .watch-btn {
-  background: #2d6a4f;
+  border: none;
+
+  padding: 12px 22px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #8b5cf6
+  );
 
   color: white;
 
-  border: none;
-
-  padding: 10px 20px;
-
-  border-radius: 8px;
-
-  cursor: pointer;
+  font-size: 15px;
 
   font-weight: 600;
 
-  transition: background 0.3s ease;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 0 12px rgba(0,255,255,0.35);
 }
 
 .watch-btn:hover {
-  background: #1b4332;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.55),
+    0 0 35px rgba(140,0,255,0.4);
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes rotateGlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse {
+
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

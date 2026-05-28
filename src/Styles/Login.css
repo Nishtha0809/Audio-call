@@ -1,85 +1,284 @@
-/* FULL PAGE BACKGROUND */
+/* ========================= */
+/* LOGIN PAGE */
+/* ========================= */
+
 .login-page {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Matching the Home page gradient */
-  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
-  margin: 0;
-  padding: 0;
+  position: relative;
+
   overflow: hidden;
+
+  width: 100%;
+
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0;
+
+  padding: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(0,255,255,0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(140,0,255,0.12), transparent 30%),
+    linear-gradient(135deg, #050816 0%, #0a1931 50%, #02030a 100%);
+
+  font-family: "Poppins", sans-serif;
 }
 
-/* GLASSMORPHISM CARD */
-.login-card {
-  background: rgba(255, 255, 255, 0.7); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* The glass effect */
-  padding: 50px 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* ========================= */
+/* GLOW EFFECTS */
+/* ========================= */
+
+.login-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -140px;
+  left: -140px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #8b5cf6,
+    #00ffff
+  );
+
+  opacity: 0.18;
+
+  animation: rotateGlow 6s linear infinite;
+
+  z-index: 0;
 }
+
+.login-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -120px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00e5ff,
+    #7c3aed,
+    #00e5ff
+  );
+
+  opacity: 0.15;
+
+  animation: rotateGlowReverse 10s linear infinite;
+
+  z-index: 0;
+}
+
+.login-page > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ========================= */
+/* LOGIN CARD */
+/* ========================= */
+
+.login-card {
+  width: 100%;
+
+  max-width: 420px;
+
+  padding: 50px 40px;
+
+  border-radius: 28px;
+
+  text-align: center;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(0,255,255,0.2);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.08),
+    0 0 40px rgba(140,0,255,0.08);
+
+  transition: 0.35s ease;
+}
+
+.login-card:hover {
+  border: 1px solid rgba(0,255,255,0.45);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.25),
+    0 0 50px rgba(140,0,255,0.2);
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
 
 .login-card h1 {
-  color: #1b4332;
-  font-size: 32px;
-  margin-bottom: 30px;
+  color: white;
+
+  font-size: 36px;
+
+  margin-bottom: 32px;
+
   font-weight: 700;
+
+  text-shadow: 0 0 15px rgba(0,255,255,0.4);
 }
 
-/* FORM STYLING */
+/* ========================= */
+/* FORM */
+/* ========================= */
+
 .login-form {
   display: flex;
+
   flex-direction: column;
+
   gap: 20px;
 }
 
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
 .input-group input {
   width: 100%;
+
   padding: 15px;
-  border: 1px solid #c7e1ce;
-  border-radius: 10px;
-  font-size: 16px;
-  background: white;
-  box-sizing: border-box; /* Prevents input from sticking out */
-  transition: 0.3s;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #cbd5e1;
 }
 
 .input-group input:focus {
-  outline: none;
-  border-color: #2d6a4f;
-  box-shadow: 0 0 8px rgba(45, 106, 79, 0.2);
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 12px rgba(0,229,255,0.35);
 }
 
-/* THE BUTTON */
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
 .login-btn {
   width: 100%;
+
   padding: 15px;
-  background: #1b4332;
-  color: white;
+
   border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #8b5cf6
+  );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: all 0.3s ease;
+
   margin-top: 10px;
+
+  box-shadow:
+    0 0 12px rgba(0,255,255,0.35);
 }
 
 .login-btn:hover {
-  background: #2d6a4f;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(27, 67, 50, 0.3);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.55),
+    0 0 35px rgba(140,0,255,0.4);
 }
+
+/* ========================= */
+/* FORGOT PASSWORD */
+/* ========================= */
 
 .forgot-password {
   margin-top: 20px;
+
   font-size: 14px;
-  color: #2d6a4f;
+
+  color: #cbd5e1;
+
   cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #00e5ff;
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes rotateGlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse {
+
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

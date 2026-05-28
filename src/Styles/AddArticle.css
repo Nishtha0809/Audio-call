@@ -1,197 +1,492 @@
-/* PAGE BACKGROUND (login page feel) */
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
 
-/* Apply this to the main container or your global styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 
-  height: 100%;
+  min-height: 100%;
+
+  font-family: "Poppins", sans-serif;
+
+  background:
+    radial-gradient(circle at top left, rgba(0,255,255,0.08), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(140,0,255,0.08), transparent 25%),
+    linear-gradient(135deg, #050816 0%, #0a1931 50%, #02030a 100%);
+
+  color: white;
 }
+
+/* ========================= */
+/* NO IMAGE BOX */
+/* ========================= */
+
 .no-image-box {
   width: 100%;
+
   height: 180px;
-  background: #e9ecef;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  color: #666;
+
+  color: #cbd5e1;
+
   font-weight: 600;
-  border-radius: 10px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(0,255,255,0.2);
 }
+
+/* ========================= */
+/* PAGE */
+/* ========================= */
 
 .page {
+  position: relative;
+
+  overflow: hidden;
+
   min-height: 100vh;
-  background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
-  font-family: Arial, sans-serif;
-  padding-bottom: 40px;
+
+  padding-bottom: 50px;
 }
 
+/* ========================= */
+/* GLOW EFFECTS */
+/* ========================= */
+
+.page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -150px;
+  left: -150px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #8b5cf6,
+    #00ffff
+  );
+
+  opacity: 0.18;
+
+  animation: rotateGlow 6s linear infinite;
+
+  z-index: 0;
+}
+
+.page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -120px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00e5ff,
+    #7c3aed,
+    #00e5ff
+  );
+
+  opacity: 0.15;
+
+  animation: rotateGlowReverse 10s linear infinite;
+
+  z-index: 0;
+}
+
+.page > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ========================= */
 /* HEADER */
+/* ========================= */
+
 .header {
   width: 100%;
-  height: 180px;
-  background: #1b4332;
-  color: white;
+
+  height: 200px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
   letter-spacing: 1px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,229,255,0.15),
+      rgba(139,92,246,0.15)
+    );
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+
+  text-shadow: 0 0 15px rgba(0,255,255,0.4);
 }
 
-/* LOGIN-LIKE CARD */
+/* ========================= */
+/* FORM CARD */
+/* ========================= */
+
 .card {
-  width: 380px;
-  background: white;
+  width: 400px;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(14px);
+
   margin-top: -60px;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  padding: 28px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(0,255,255,0.2);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.08),
+    0 0 40px rgba(140,0,255,0.08);
+
   text-align: center;
+
+  transition: 0.35s ease;
+}
+
+.card:hover {
+  border: 1px solid rgba(0,255,255,0.45);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.25),
+    0 0 50px rgba(140,0,255,0.2);
 }
 
 .card h2 {
-  margin-bottom: 15px;
-  color: #1b4332;
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  text-shadow: 0 0 12px rgba(0,255,255,0.35);
 }
 
+/* ========================= */
 /* FORM */
+/* ========================= */
+
 .form {
   display: flex;
+
   flex-direction: column;
-  gap: 12px;
+
+  gap: 14px;
 }
 
 .form input,
 .form textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 13px 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
   outline: none;
-  transition: 0.2s;
+
+  transition: 0.3s ease;
+
+  font-size: 14px;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #cbd5e1;
 }
 
 .form input:focus,
 .form textarea:focus {
-  border-color: #40916c;
-  box-shadow: 0 0 5px rgba(64, 145, 108, 0.3);
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 12px rgba(0,229,255,0.35);
 }
 
 .form textarea {
   height: 90px;
+
   resize: none;
 }
 
-/* BUTTON */
-.form button {
-  padding: 12px;
-  background: #2d6a4f;
-  color: white;
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.form button,
+.dashboard-btn,
+.editBtn,
+.deleteBtn {
   border: none;
-  border-radius: 8px;
+
   cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
-.form button:hover {
-  background: #1b4332;
+/* MAIN BUTTON */
+
+.form button,
+.dashboard-btn {
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #8b5cf6
+  );
+
+  color: white;
+
+  box-shadow:
+    0 0 12px rgba(0,255,255,0.35);
 }
 
+.form button:hover,
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.55),
+    0 0 35px rgba(140,0,255,0.4);
+}
+
+/* DISABLED BUTTON */
+
+.disabled-btn {
+  background: #555 !important;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+/* ========================= */
 /* ARTICLES GRID */
+/* ========================= */
+
 .articles {
   display: flex;
+
   flex-wrap: wrap;
-  gap: 20px;
+
+  gap: 28px;
+
   justify-content: center;
-  margin-top: 40px;
+
+  margin-top: 50px;
+
   padding: 0 20px;
 }
 
+/* ========================= */
 /* ARTICLE CARD */
+/* ========================= */
+
 .articleCard {
-  width: 250px;
-  background: white;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  width: 260px;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 22px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(0,255,255,0.2);
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.08),
+    0 0 40px rgba(140,0,255,0.08);
 }
 
 .articleCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+
+  border: 1px solid rgba(0,255,255,0.45);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.25),
+    0 0 50px rgba(140,0,255,0.2);
 }
 
 .articleCard img {
   width: 100%;
-  border-radius: 10px;
-  height: 150px;
+
+  height: 160px;
+
   object-fit: cover;
+
+  border-radius: 14px;
 }
 
 .articleCard h3 {
-  margin: 10px 0 5px;
+  margin: 14px 0 8px;
+
+  color: white;
+
+  text-shadow: 0 0 10px rgba(0,255,255,0.3);
 }
 
 .articleCard p {
   font-size: 14px;
-  color: #555;
+
+  color: #cbd5e1;
+
+  line-height: 1.7;
 }
 
-/* ACTION BUTTONS */
+/* ========================= */
+/* ACTIONS */
+/* ========================= */
+
 .actions {
   display: flex;
+
   justify-content: space-between;
-  margin-top: 10px;
+
+  margin-top: 16px;
+
+  gap: 10px;
 }
+
+/* EDIT BUTTON */
 
 .editBtn {
-  padding: 6px 10px;
-  border: none;
-  background: #40916c;
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #00c6ff,
+    #0072ff
+  );
+
   color: white;
-  border-radius: 5px;
-  cursor: pointer;
 }
+
+/* DELETE BUTTON */
 
 .deleteBtn {
-  padding: 6px 10px;
-  border: none;
-  background: #d00000;
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #ff416c,
+    #ff4b2b
+  );
+
   color: white;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.dashboard-btn {
-  padding: 12px;
-  background: #2d6a4f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-  width: 100%;
+.editBtn:hover,
+.deleteBtn:hover {
+  transform: translateY(-2px);
 }
 
-.dashboard-btn:hover {
-  background: #2d6a4f;
-}
-
-.disabled-btn {
-  background: #ccc !important;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
+/* ========================= */
+/* ERROR MESSAGE */
+/* ========================= */
 
 .error-msg {
-  color: #d00000;
+  color: #ff6b6b;
+
   font-size: 13px;
+
   margin-top: 8px;
+
   font-weight: 500;
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes rotateGlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse {
+
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

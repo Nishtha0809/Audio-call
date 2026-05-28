@@ -4,3 +4,19 @@ html, body {
   overflow-y: auto;
   height: 100%;
 }
+
+:root {
+  --bg-cream: #F4EBE1;
+  --primary-brown: #8B4F2A;
+  --card-white: #ffffff;
+  --text-dark: #0d0d0d;
+  --text-muted: #595959;
+}
+
+/* You can also set the default body background here */
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif; /* or your preferred font */
+  margin: 0;
+}

@@ -1,98 +1,280 @@
+/* ========================= */
+/* GLOBAL PAGE */
+/* ========================= */
+
 .articles-page {
+  position: relative;
+
+  overflow: hidden;
+
   padding: 120px 10% 60px;
-  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+
   min-height: 100vh;
+
   box-sizing: border-box;
+
+  background:
+    radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(140,0,255,0.15), transparent 30%),
+    linear-gradient(135deg, #050816 0%, #0a1931 50%, #02030a 100%);
+
+  font-family: "Poppins", sans-serif;
 }
+
+/* ========================= */
+/* ANIMATED BLOCKCHAIN GLOW */
+/* ========================= */
+
+.articles-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -120px;
+  left: -120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #8b5cf6,
+    #00ffff
+  );
+
+  opacity: 0.4;
+
+  animation: rotateGlow 6s linear infinite;
+
+  z-index: 0;
+}
+
+.articles-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #00e5ff,
+    #7c3aed,
+    #00e5ff
+  );
+
+  opacity: 0.3;
+
+  animation: rotateGlowReverse 10s linear infinite;
+
+  z-index: 0;
+}
+
+.articles-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
 
 .page-title {
   text-align: center;
-  color: #1b4332;
-  margin-bottom: 50px;
-  font-size: 36px;
-  font-weight: bold;
+
+  margin-bottom: 60px;
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  text-shadow: 0 0 15px rgba(0,255,255,0.5);
 }
-/* Fix for the grid container */
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 320px); /* Keeps cards same size */
-  gap: 25px; /* Reduced gap slightly for a tighter look */
+
+  grid-template-columns: repeat(auto-fill, 320px);
+
+  gap: 30px;
+
   justify-content: center;
+
   align-items: start;
+
   width: 90%;
+
   margin: 0 auto;
 }
 
-/* Ensure cards don't have unnecessary margins */
+/* ========================= */
+/* CARD */
+/* ========================= */
+
 .article-card {
-  width: 100%; /* Grid now controls the 320px width */
-  margin: 0;   /* Remove any accidental margins */
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
+  width: 100%;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 22px;
+
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border: 1px solid rgba(0,255,255,0.2);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.08),
+    0 0 40px rgba(140,0,255,0.08);
+
+  transition: all 0.35s ease;
+
+  position: relative;
 }
+
 .article-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
+
+  border: 1px solid rgba(0,255,255,0.5);
+
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.25),
+    0 0 50px rgba(140,0,255,0.2);
 }
 
-.card-image-placeholder {
-  height: 180px;
-  background: #0a1931; /* Matches navbar theme */
-}
-
-.card-content {
-  padding: 25px;
-}
-
-.card-content h3 {
-  color: #1b4332;
-  margin-bottom: 15px;
-}
-
-.card-content p {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  
-}
-
-.read-more-btn {
-  background: #2d6a4f;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.read-more-btn:hover {
-  background: #1b4332;
-}
+/* ========================= */
+/* IMAGE */
+/* ========================= */
 
 .card-image-container {
   width: 100%;
-  height: 200px; /* Adjust this height as needed */
+
+  height: 210px;
+
   overflow: hidden;
-  background-color: #0a1931; /* Fallback color if image fails */
+
+  background: #02030a;
 }
 
-/* Style for the actual image */
 .article-img {
   width: 100%;
+
   height: 100%;
-  object-fit: cover; /* This is crucial for fixing scaling issues */
-  display: block;
-  transition: transform 0.3s ease;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
 }
 
-/* Optional: Zoom effect when you hover over the card */
 .article-card:hover .article-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+  color: #ffffff;
+
+  margin-bottom: 14px;
+
+  font-size: 22px;
+
+  text-shadow: 0 0 10px rgba(0,255,255,0.3);
+}
+
+.card-content p {
+  color: #cbd5e1;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 22px;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.read-more-btn {
+  border: none;
+
+  padding: 12px 22px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #8b5cf6
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 0 12px rgba(0,255,255,0.35);
+}
+
+.read-more-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.55),
+    0 0 35px rgba(140,0,255,0.4);
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes rotateGlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateGlowReverse {
+
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

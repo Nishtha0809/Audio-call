@@ -47,7 +47,6 @@ function AudioCall() {
       console.log("Users:", users);
 
       setOnlineUsers([...users]);
-
     };
 
     const handleConnect = () => {
@@ -55,7 +54,6 @@ function AudioCall() {
       setSocketConnected(true);
 
       socket.emit("join", myEmail);
-
     };
 
     const handleDisconnect = () => {
@@ -163,8 +161,7 @@ function AudioCall() {
     try {
 
       const res = await axios.get(
-
-        `http://localhost:3002/api/recordings?email=${myEmail}`
+`https://new-project-1-cqlz.onrender.com/api/recordings?email=${myEmail}`
       );
       setSavedRecordings(res.data);
 
@@ -377,7 +374,7 @@ function AudioCall() {
         }
       };
 
-    // when recording stops all chunks combine into single audio file.
+    // when recording stops  blob combine all chunks into single audio file.
     mediaRecorder.current.onstop =
       async () => {
 
@@ -389,13 +386,11 @@ function AudioCall() {
         );
 
         const audioURL =
-          URL.createObjectURL(blob);
+          URL.createObjectURL(blob); //This creates: temporary browser audio link
 
         setRecordingURL(audioURL);
 
-        // =====================================
         // SAVE RECORDING INTO DATABASE
-        // =====================================
 
         try {
 
@@ -431,27 +426,22 @@ function AudioCall() {
 
           await axios.post(
 
-            "http://localhost:3002/api/recordings",
+            "https://new-project-1-cqlz.onrender.com/api/recordings",
 
             formData,
-
             {
               headers: {
                 "Content-Type":
                   "multipart/form-data"
               }
             }
-
           );
 
           fetchRecordings();
-
-        } catch (error) {
-
-          console.log(error);
-
         }
-
+         catch (error) {
+          console.log(error);
+        }
       };
 
     mediaRecorder.current.start();
@@ -554,8 +544,7 @@ function AudioCall() {
   };
 
   return (
-
-    <div className="audio-container">
+    <div className="audio-container cyber-bg">
 
       {/* USER EMAIL */}
       <button className="user-email">
@@ -799,7 +788,7 @@ function AudioCall() {
               <audio controls>
 
                 <source
-                  src={`http://localhost:3002${recording.recordingUrl}`}
+               src={`https://new-project-1-cqlz.onrender.com${recording.recordingUrl}`}
                   type="audio/webm"
                 />
 

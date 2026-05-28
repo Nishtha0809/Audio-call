@@ -1,116 +1,150 @@
-/* FULL PAGE SETUP */
-body, html {
+/* GLOBAL RESETS & THEME INITIALIZATION */
+body {
   margin: 0;
   padding: 0;
-  
-  height: 100%;
+  background-color: #F4EBE1; /* Warm cream background from image_af30e3.png */
+  font-family: "Poppins", sans-serif;
+  color: #0D0D0D; /* Near-black primary text */
 }
-
-
 .home-container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  /* Full-page gradient background */
-  background: linear-gradient(135deg, #f7fff7 0%, #d8f3dc 100%);
+
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-/* HEADER SECTION (Below Navbar) */
-.welcome-header {
-  padding: 60px 20px;
-  text-align: center;
-  background: transparent; /* Allows page gradient to show through */
-}
-
-.welcome-header h2 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #1b4332; /* Dark green for contrast */
-  margin-bottom: 12px;
-}
-
-.welcome-header p {
-  font-size: 18px;
-  color: #2d6a4f;
-  max-width: 800px;
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: 0 auto;
-}
+  box-sizing: border-box;
 
-/* CENTERED HERO BANNER (70% Width) */
-.hero-banner {
   position: relative;
-  width: 70%; /* Centered restricted width */
-  height: 450px; 
-  margin: 20px auto 60px auto; /* Horizontal centering with margin: auto */
   overflow: hidden;
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Lifted effect against gradient */
+  background: #0f172a;
 }
 
-/* BANNER IMAGE */
+
+/* TOP INTRO HEADER */
+.welcome-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-main-title {
+  font-size: 42px;
+  color: #8b5cf6; /* Deep brown theme accent */
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.home-subtitle {
+  color: #ffefef; /* Subtle muted dark text */
+  font-size: 18px;
+  margin: 0;
+}
+
+/* HERO BANNER BLOCK (The Box) */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Consistent banner height */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(139, 79, 42, 0.15); /* Soft brown tinted shadow */
+  margin-bottom: 50px;
+}
+
+/* HERO BACKGROUND IMAGE */
 .hero-bg-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Keeps image sharp and centered without distortion */
   display: block;
 }
 
-/* TEXT OVERLAY (Matches image_39c5f9.jpg) */
+/* OVERLAY CONTEXT CONTAINER (Positions text directly over the image) */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Dark tint for text readability */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)); /* Dark overlay for text readability */
   display: flex;
-  align-items: center; /* Vertical center */
-  justify-content: flex-start; /* Aligns content to the left */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* TEXT CONTENT WITHIN THE BANNER */
 .hero-text-content {
-  margin-left: 10%; /* Specific left-side positioning */
-  color: white;
-  max-width: 600px;
-  text-align: left;
+  max-width: 700px;
+  color: #ffffff; /* White text looks crisp against dark overlay image */
 }
 
 .hero-text-content h1 {
-  font-size: 42px;
+  font-size: 48px;
+  margin: 0 0 15px 0;
   font-weight: 700;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-text-content p {
   font-size: 18px;
-  margin-bottom: 25px;
-  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+  color: #f0f0f0;
 }
 
-/* EXPLORE BUTTON */
+/* CTA BUTTON */
 .explore-btn {
-  padding: 12px 28px;
-  background-color: #2d6a4f;
-  color: white;
+  padding: 14px 32px;
   border: none;
-  border-radius: 6px;
+  border-radius: 30px;
+  background-color: #8b5cf6; /* Primary Brown */
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 79, 42, 0.4);
 }
 
 .explore-btn:hover {
-  background-color: #1b4332;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  background-color: #c5a2e9; /* Slightly deeper shade for hover depth */
+  box-shadow: 0 6px 20px rgba(139, 79, 42, 0.6);
 }
 
-/* CONTENT BELOW BANNER */
-.home-content {
-  padding: 50px 15%;
-  text-align: center;
+/* THREE-COLUMN FEATURE CARD GRID */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  background-color: #ffffff; /* Crisp white card base matching image_af30e3.png */
+  border: 1px solid rgba(139, 79, 42, 0.1); /* Soft brown border hint */
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(139, 79, 42, 0.12);
+}
+
+.feature-card h2 {
+  color: #8b5cf6; /* Heading uses primary accent color */
+  font-size: 22px;
+  margin: 0 0 12px 0;
+}
+
+.feature-card p {
+  color: #595959;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
 }

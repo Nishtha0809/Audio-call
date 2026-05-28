@@ -17,7 +17,10 @@ const app = express();
 
 app.use(
   cors({
-   origin: ["http://localhost:3000","https://audio-call-3n6e.onrender.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://audio-call-3n6e.onrender.com"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
   })
@@ -47,7 +50,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://new-project-1-cqlz.onrender.com",
+    origin: [
+      "http://localhost:3000",
+      "https://audio-call-3n6e.onrender.com"
+    ],
     credentials: true
   }
 });
