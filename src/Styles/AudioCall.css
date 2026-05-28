@@ -34,7 +34,7 @@ body {
 
   font-size: 40px;
 
-  color: #8b5cf6;
+  color: #c5badf;
 
   text-shadow:
     0 0 20px #8b5cf6;
@@ -55,6 +55,8 @@ body {
 
 /* USER CARD */
 
+/* USER CARD */
+
 .user-card {
 
   background:
@@ -65,15 +67,23 @@ body {
 
   border-radius: 15px;
 
-  padding: 20px;
+  padding: 18px 22px;
 
-  margin: 15px 0;
+  margin: 15px auto;
 
   display: flex;
 
   justify-content: space-between;
 
   align-items: center;
+
+  gap: 20px;
+
+  width: fit-content;
+
+  min-width: 350px;
+
+  max-width: 500px;
 
   transition: 0.3s;
 
